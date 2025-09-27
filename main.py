@@ -22,7 +22,7 @@ from rich.console import Console
 console = Console()
 from rich.table import Table
 
-table = Table(title="", box=ROUNDED)
+table = Table(title="", box=HORIZONTALS)
 
 # Add columns to the table with optional styles
 table.add_column("currencies", justify="center" )  
@@ -63,7 +63,12 @@ content = Group(
 
 
 
-panel = Panel(content, title="Crypto prices", expand=False)
+panel = Panel(content, title="Crypto prices", box=ROUNDED, expand=False)
+
+# expanded  version
+# panel = Panel(content, title="Crypto prices", expand=True)
+
+
 
 # printing it by center
 console.print(Align.center(panel))
